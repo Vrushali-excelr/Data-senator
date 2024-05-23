@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    font-family: Arial;
+    border: border-box;
+}
+.navbar{
+    height: 60px;
+    background-color: rgb(188, 190, 232);
+    color: rgb(19, 17, 17);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.nav-logo{
+    height: 50px;
+    width:100px ;
+    display:flex;
+    justify-content:space-evenly;
+    color:black;
+}
+.logo{
+    background-image:url("https://cdn5.vectorstock.com/i/1000x1000/58/04/corporate-financial-logo-statistics-icon-vector-24975804.jpg ") ;
+    background-size: cover ;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #252728;
+}
+body{
+    background-image: url("https://assets.datamation.com/uploads/2023/08/dm08172023-what-is-data-analytics.png");
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+h1{
+    font-size: larger;
+    font-weight: 1000;
+    color: aliceblue;
+    text-align: left;
+}
+p{
+    font-size: medium;
+    color: aliceblue;
+    text-align: left;
+    
+}
+#box{
+    background: rgb(188, 190, 232);
+    width: 600px;
+    border: 2px solid white;
+    color: rgb(6, 6, 6);
+    padding: 50px;
+    margin: 50px;
+    text-align: left;
+    place-content: center;
+}
+.container{
+    background: rgb(188, 190, 232);
+    width: 300px;
+    border: 2px solid white;
+    color: rgb(6, 6, 6);
+    padding: 50px;
+    margin: 50px;
+    text-align: left;
+    place-content: center;
+}
+.content{
+         background-color: rgb(195, 252, 169);
+         display: flex;
+         flex-flow: row wrap;
+         justify-content: stretch;
+}
+.content li{
+    list-style-type: circle;
+}
+.content a{
+    display: inline-block;
+    padding: 25px;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(22, 21, 21);
+    font-size: large;
+}
+a:hover{
+    color: red;
+}
+a:active{
+    color: aliceblue;
+    background-color: black;
+}

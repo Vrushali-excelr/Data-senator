@@ -1,0 +1,36 @@
+body{
+    background-image:url("https://media.istockphoto.com/id/1402399049/vector/dark-blue-abstract-background-with-triangle-lines-stripe-and-light-composition.jpg?s=612x612&w=0&k=20&c=hwCVDMjge-rFOL92igkhFUMR50R9XmL2Rc46Dhk1110=");
+    background-size: cover ;
+    background-repeat:no-repeat;
+}
+header{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    text-align: center;
+    width: 100%;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    font-size: medium;
+}
+form{
+    width: 50%;
+    height: 100px;
+
+}
+li{
+    color: #fff;
+}
+a:hover{
+    color:red;
+}
+a:active{
+     color:white;
+     background-color: black;
+}
