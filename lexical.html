@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lexical Analyzer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2rem;
+      color: #fff;
+      background: linear-gradient(-45deg, #9ad8ff, #22eeda, #9858e2, #f2f792);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+      margin-bottom: 1rem;
+    }
+
+    textarea {
+      width: 90%;
+      max-width: 700px;
+      height: 150px;
+      border: none;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      resize: vertical;
+      background-color: rgba(255,255,255,0.9);
+      color: #333;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 50px;
+      background: #ff758c;
+      background: linear-gradient(to right, #ff7eb3, #ff758c);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    table {
+      margin-top: 2rem;
+      width: 90%;
+      max-width: 700px;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      color: #333;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    th {
+      background: #6a11cb;
+      background: linear-gradient(to right, #2575fc, #6a11cb);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lexical Analyzer</h1>
+
+  <textarea id="codeInput" placeholder="Enter your code here..."></textarea>
+  <br>
+  <button onclick="analyze()">Analyze</button>
+
+  <table id="resultTable" style="display: none;">
+    <thead>
+      <tr>
+        <th>Token</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody id="resultBody"></tbody>
+  </table>
+
+  <script>
+    const keywords = ["int", "float", "if", "else", "return", "for", "while"];
+    const symbols = ["+", "-", "*", "/", "=", "(", ")", "{", "}", ";"];
+
+    function analyze() {
+      const input = document.getElementById("codeInput").value;
+      const tokens = input.match(/\w+|[^\s]/g) || [];
+      const resultBody = document.getElementById("resultBody");
+      resultBody.innerHTML = "";
+
+      tokens.forEach(token => {
+        let type = "Identifier";
+        if (keywords.includes(token)) {
+          type = "Keyword";
+        } else if (!isNaN(token)) {
+          type = "Number";
+        } else if (symbols.includes(token)) {
+          type = "Symbol";
+        }
+
+        const row = `<tr><td>${token}</td><td>${type}</td></tr>`;
+        resultBody.innerHTML += row;
+      });
+
+      document.getElementById("resultTable").style.display = "table";
+    }
+  </script>
+
+</body>
+</html>
